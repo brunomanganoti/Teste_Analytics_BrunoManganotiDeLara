@@ -8,8 +8,8 @@ conversão de tipos de dados, se necessário.
 - Salve o dataset limpo em um arquivo data_clean.csv. 
 """
 
-# Importação das bibliotecas
-from map_produto_categoria import produto_categoria
+# Importação das bibliotecas e arquivos
+from map_produto_cat_preco import produto_cat_preco
 from faker import Faker
 from datetime import date
 import pandas as pd
@@ -17,48 +17,74 @@ import numpy as np
 import random
 
 faker = Faker('pt_BR') # Gera instância de um objeto faker configurado para o idioma Português - BR
-num_registros = 100    # Define o número de registros a serem criados como 100
+num_registros = 65     # Define o número de registros a serem criados
 
 # Variáveis de controle para geração de datas no formato date
 data_inicial = date(2023,1,1)   # Início: 01/01/2023 
 data_final   = date(2023,12,31) # Fim...: 31/12/2023 
 
-# Inicia lista de vendas
-vendas = []
-
 # Função utilizada para gerar um registro do dataframe
-def gera_registro(idx):
-    produto = random.choice(list(produto_categoria.keys()))
-    vendas.append({
-        'ID': idx,
-        'Data': faker.date_between(start_date=data_inicial, end_date=data_final),
-        'Produto': produto,
-        'Categoria': produto_categoria[produto],
-        'Quantidade': random.randint(1,100),
-        'Preço': round(random.uniform(15, 250), 2)
-    })
+def gera_df(tamanho):
+    # Inicia lista de vendas
+    vendas = []
 
-# Gera a quantidade de registros desejada a partir da variável 'num_registros'
-for idx in range(0,num_registros):
-    gera_registro(idx)
+    for idx in range(1, num_registros+1):
+        produto = random.choice(list(produto_cat_preco.keys()))
+        categoria, preco = produto_cat_preco[produto]
+        vendas.append({
+            'ID': idx,
+            'Data': faker.date_between(start_date=data_inicial, end_date=data_final),
+            'Produto': produto,
+            'Categoria': categoria,
+            'Quantidade': random.randint(1,100),
+            'Preço': preco
+        })
 
-# Transforma os registros gerados em dataframe
-df_vendas = pd.DataFrame(vendas, columns=['ID','Data','Produto','Categoria','Quantidade','Preço'])
+    # Transforma os registros gerados em dataframe
+    df = pd.DataFrame(vendas, columns=['ID','Data','Produto','Categoria','Quantidade','Preço'])
+    return df
+
+# Armazena o dataframe gerado em 'df_vendas'
+df_vendas = gera_df(num_registros)
+
+# Adiciona valores nulos a linhas aleatórias do dataframe
+# Como os preços são fixos por produto, adiciona valores nulos a quantidade apenas
+for _ in range(25):
+    idx = random.randint(0, len(df_vendas)-1) 
+    coluna = random.choice(['Quantidade'])
+    df_vendas.at[idx, coluna] = pd.NA
+
+# Adiciona linhas duplicadas para simulação de limpeza dos dados
+linhas_duplicadas = df_vendas.sample(25)                                 # Pega 25 linhas aleatórias do dataframe gerado
+df_vendas = pd.concat([df_vendas, linhas_duplicadas], ignore_index=True) # Concatena as linhas escolhidas (duplicadas)
 
 # Antes de remover duplicados da coluna de produtos
-# print(df_vendas.to_string(index=False))
-
-print('\n-------------------------')
-print('REMOVE DUPLICATAS - PRODUTOS\n')
+print(df_vendas.to_string(index=False))
 
 # ===== TRATAMENTO E LIMPEZA DE DADOS ===== #
+# -- REMOVE DUPLICATAS -- # 
+df_vendas.drop_duplicates(inplace=True)
 
-# -- REMOVE DUPLICATAS -- 
-# Regra: Produto deve ser único (aparecer apenas uma vez)
-# Faz a tratativa das duplicatas da coluna de produtos, mantendo a primeira aparição
-df_vendas.drop_duplicates(subset=['Produto'], inplace=True, keep='first')
+# -- TRATA VALORES NULOS/VAZIOS -- #
+# Preenche os campos nulos da coluna de Quantidade com a mediana da mesma
+df_vendas['Quantidade'] = df_vendas['Quantidade'].fillna(df_vendas['Quantidade'].median())
 
+""" print('\n----------------------------------')
+print('APÓS TRATAMENTO E LIMPEZA DE DADOS\n')
+print(df_vendas.to_string(index=False)) """
 
+# Salva o dataframe limpo no arquivo .csv
+df_vendas.to_csv('data_clean.csv', index=False)
+
+# Carrega o dataset limpo do arquivo .csv
+df_vendas_clean = pd.read_csv('data_clean.csv')
 
 # Cria uma nova coluna realizando o cálculo do total de vendas (Quantidade x Preço)
-# df_vendas['total_vendas'] = df_vendas['Quantidade'] * df_vendas['Preço']
+df_vendas_clean['total_vendas'] = round((df_vendas_clean['Quantidade'] * df_vendas_clean['Preço']), 2)
+
+# Atualiza o arquivo .csv com a coluna adicionada
+df_vendas_clean.to_csv('data_clean.csv', index=False)
+
+""" print('\n-------------------------------')
+print('APÓS CÁLCULO DO TOTAL DE VENDAS\n')
+print(df_vendas_clean.to_string(index=False)) """
