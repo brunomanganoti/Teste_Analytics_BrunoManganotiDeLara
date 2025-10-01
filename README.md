@@ -1,16 +1,17 @@
 <a id="inicio-readme"></a>
 
-<!-- INÍCIO -->
-<div style="justify-content: right; display: flex;">
-      <img src="img/analytics2.gif" alt="analytics" width="110px" height="70px">
-</div>
-
 <!-- SOBRE O PROJETO -->
-# 📊 Projeto - Teste Analytics
-* Este repositório contém um estudo fictício de geração, limpeza e análise de dados de vendas, com foco em simular cenários reais para prática de Data Analytics.
-* O projeto permite tanto utilizar o dataset original (já incluído no repositório) quanto gerar novos dados aleatórios para diferentes análises.
+# 📊 Projeto | Teste Analytics
+<div style="display: flex; align-items: center; justify-content: space-between;">
+   
+   * ### Este repositório contém um estudo fictício de geração, limpeza e análise de dados de vendas, com foco em simular cenários reais para prática de Data Analytics.
+   * ### O projeto permite tanto utilizar o dataset original (já incluído no repositório) quanto gerar novos dados aleatórios para diferentes análises.
 
-<p align="right">(<a href="#inicio-readme">voltar ao início</a>)</p>
+   <div>
+    <img src="img/analytics2.gif" alt="analytics" width="120px" height="80px">
+  </div>
+</div>
+<p></p>
 
 # 🛠️ Tecnologias utilizadas
    * Python 3.10+
@@ -61,13 +62,13 @@
 # ⚙️ Instruções
 Siga as etapas abaixo para o funcionamento correto dos scripts.
 
-### 1️⃣ Clone o repositório
+## 1️⃣ Clone o repositório
    ```bash
    git clone https://github.com/brunomanganoti/Teste_Analytics_BrunoManganotiDeLara.git
 
    cd Teste_Analytics_BrunoManganotiDeLara
    ```
-### 2️⃣ Instale as dependências do projeto
+## 2️⃣ Instale as dependências do projeto
    ```bash
    pip install -r requisitos.txt
    ```
@@ -78,11 +79,11 @@ Siga as etapas abaixo para o funcionamento correto dos scripts.
 # ▶️ Como funciona
 Etapas para geração das visualizações e novas análises
 
-### ℹ️ Observações iniciais
+## ℹ️ Observações iniciais
 * As análises originais foram feitas a partir dos dados encontrados no arquivo 'data_clean.csv' originais do repositório.
 * Caso queira gerar novos dados e gráficos para diferentes análises, siga as etapas abaixo.
 
-### 1️⃣ Geração e limpeza dos dados
+## 1️⃣ Geração e limpeza dos dados
 Execute o script para criar um dataset fictício e aplicar limpeza básica de dados (remoção de duplicatas e tratamento de nulos):
 ```bash
 cd "Parte 1" # se necessário
@@ -90,7 +91,7 @@ py geracao_limpeza_dados.py
 ```
 Isso vai gerar o arquivo 📄 <mark>data_clean.csv</mark>.
 
-### 2️⃣ Análise exploratória
+## 2️⃣ Análise exploratória
 Para executar a análise exploratória e gerar novos gráficos:
 ```bash
 cd "Parte 1" # se necessário
@@ -100,9 +101,24 @@ Serão criados os arquivos:
 * 📊 <mark>vendas_categoria.png</mark> -> gráfico de vendas por categoria
 * 📊 <mark>vendas_mes.png</mark> -> gráfico de vendas por mês
 
-### 3️⃣ Consultas SQL
-O arquivo ⛃ <mark>consultas_sql.sql</mark> na pasta 'Parte 2' contém exemplos de consultas SQL para visualização dos dados.
+## 3️⃣ Consultas SQL
+O arquivo ⛃ <mark>consultas_sql.sql</mark> na pasta "Parte 2" contém exemplos de consultas SQL para visualização dos dados.<br><br>
+Caso queira, também é possível testar essas consultas pelo arquivo: 📜 <mark>teste_consulta.py</mark> a partir dos comandos abaixo:<br>
+```bash
+cd "Parte 2" # se necessário
+py teste_consulta.py
+```
 
+### 📝 Exemplo de saída:
+```bash
+            Produto  total_vendas
+0              Peão         804.6
+1          Chuteira       12414.6
+2  Relógio de Pulso       23422.9
+3  Máquina de Secar      118794.6
+```
 
+## 4️⃣ Relatório de insights
+A pasta "Parte 3" contém um relatório com observações e os principais insights referentes às visualizações geradas.
 
 <p align="right">(<a href="#inicio-readme">voltar ao início</a>)</p>
