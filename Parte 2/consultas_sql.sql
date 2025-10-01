@@ -22,9 +22,8 @@ SELECT
 /* 
 Para esta consulta, foi realizada a seleção da coluna de Produto juntamente a soma
 da coluna do total de vendas, tendo como resultado a soma total das vendas do produto.
-Também foi aplicado o filtro 'WHERE strftime('%m', Data) = '06'' para que fossem 
-consultadas apenas as vendas do mês de Junho e, como a tabela apresenta apenas o período
-do ano de 2023, foi extraído apenas o mês 6.
+Também foi aplicado o filtro "WHERE Data BETWEEN '2023-06-01' AND '2023-06-30'" para que fossem 
+consultadas apenas as vendas do mês de Junho, utilizando BETWEEN para melhor desempenho.
 Por fim, O resultado é agrupado por Produto e ordenado de forma crescente pelo 
 total de vendas, mostrando primeiro os produtos menos vendidos.
 */
@@ -32,6 +31,6 @@ SELECT
     Produto,
     SUM(total_vendas) AS total_vendas
     FROM vendas
-    WHERE strftime('%m', Data) = '06'
+    WHERE Data BETWEEN '2023-06-01' AND '2023-06-30'
     GROUP BY Produto
     ORDER BY total_vendas

@@ -40,7 +40,7 @@ query = """
         Produto,
         SUM(total_vendas) AS total_vendas
         FROM vendas
-        WHERE strftime('%m', Data) = '06'
+        WHERE Data BETWEEN '2023-06-01' AND '2023-06-30'
         GROUP BY Produto
         ORDER BY total_vendas
     """
