@@ -1,9 +1,10 @@
+# Teste e visualização das consultas SQL com pandasql
+
 import os
 import pandas as pd
 from pandasql import sqldf
 
-# Caminho do arquivo
-# Formatação do caminho para outras máquinas
+# Formatação do caminho do arquivo para outras máquinas
 base_dir    = os.path.dirname(__file__)  
 caminho_arq = os.path.join(base_dir, "..", "Parte 1", "data_clean.csv")
 caminho_arq = os.path.normpath(caminho_arq)
@@ -28,3 +29,21 @@ query = """
 
 primeira_consulta = sqldf(query)
 print(primeira_consulta)
+print('\n==========================================================\n')
+
+""" 
+Identificar os produtos que venderam menos no mês de junho de 2024.
+"""
+
+query = """
+    SELECT
+        Produto,
+        SUM(total_vendas) AS total_vendas
+        FROM vendas
+        WHERE strftime('%m', Data) = '06'
+        GROUP BY Produto
+        ORDER BY total_vendas
+    """
+
+segunda_consulta = sqldf(query)
+print(segunda_consulta)

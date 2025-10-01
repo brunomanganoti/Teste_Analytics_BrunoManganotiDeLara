@@ -69,9 +69,12 @@ df_vendas.drop_duplicates(inplace=True)
 # Preenche os campos nulos da coluna de Quantidade com a mediana da mesma
 df_vendas['Quantidade'] = df_vendas['Quantidade'].fillna(df_vendas['Quantidade'].median())
 
-""" print('\n----------------------------------')
+# Retire o comentário do bloco abaixo para visualização do dataframe após o tratamento dos dados
+""" 
+print('\n----------------------------------')
 print('APÓS TRATAMENTO E LIMPEZA DE DADOS\n')
-print(df_vendas.to_string(index=False)) """
+print(df_vendas.to_string(index=False)) 
+"""
 
 # Salva o dataframe limpo no arquivo .csv
 df_vendas.to_csv('data_clean.csv', index=False)
@@ -85,6 +88,10 @@ df_vendas_clean['total_vendas'] = round((df_vendas_clean['Quantidade'] * df_vend
 # Atualiza o arquivo .csv com a coluna adicionada
 df_vendas_clean.to_csv('data_clean.csv', index=False)
 
-""" print('\n-------------------------------')
+# Retire o comentário do bloco abaixo para visualização do dataframe após o cálculo e adição da coluna 
+# com o total de vendas (total_vendas)
+""" 
+print('\n-------------------------------')
 print('APÓS CÁLCULO DO TOTAL DE VENDAS\n')
-print(df_vendas_clean.to_string(index=False)) """
+print(df_vendas_clean.to_string(index=False)) 
+"""
