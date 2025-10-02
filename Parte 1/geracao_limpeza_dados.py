@@ -58,8 +58,12 @@ for _ in range(25):
 linhas_duplicadas = df_vendas.sample(25)                                 # Pega 25 linhas aleatórias do dataframe gerado
 df_vendas = pd.concat([df_vendas, linhas_duplicadas], ignore_index=True) # Concatena as linhas escolhidas (duplicadas)
 
-# Antes de remover duplicados da coluna de produtos
+# Retire o comentário do bloco abaixo para visualização do dataframe após o tratamento dos dados
+"""
+print('\n-----------------------------')
+print('DADOS GERADOS (FORMATO BRUTO)\n')
 print(df_vendas.to_string(index=False))
+"""
 
 # ===== TRATAMENTO E LIMPEZA DE DADOS ===== #
 # -- REMOVE DUPLICATAS -- # 

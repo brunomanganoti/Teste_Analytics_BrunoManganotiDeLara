@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 df_vendas = pd.read_csv('data_clean.csv')
 df_vendas['Data'] = pd.to_datetime(df_vendas['Data'])
 
+print('\n-------------------------------')
+print('APÓS CÁLCULO DO TOTAL DE VENDAS\n')
+print(df_vendas.to_string(index=False)) 
+
 # === PRIMEIRA VISUALIZAÇÃO: GRÁFICO DE LINHA COM O TOTAL DE VENDAS POR MÊS === #
 # Agrupa a soma do total de vendas por mês
 vendas_mensais = df_vendas.resample('MS', on='Data')['total_vendas'].sum()
@@ -21,7 +25,6 @@ plt.tight_layout()
 plt.savefig('Gráficos/vendas_mes.png')
 
 # === SEGUNDA VISUALIZAÇÃO: GRÁFICO DE BARRAS HORIZONTAIS COM AS CATEGORIAS MAIS VENDIDAS === #
-
 vendas_categoria = df_vendas.groupby('Categoria')['total_vendas'].sum().reset_index()
 cores = ['blue','red','orange','skyblue','yellow','magenta','green','pink','cyan']
 
@@ -35,3 +38,13 @@ plt.ylabel("Categoria", fontsize=15)
 plt.grid(True, linestyle='--')
 plt.tight_layout()
 plt.savefig('Gráficos/vendas_categoria.png')
+
+print(
+'''
+-----------------
+Gráficos gerados!
+-----------------
+Local: ../Parte 1/Gráficos/
+''')
+
+# Obs: As observações e insights estão no relatório da Parte 3!
