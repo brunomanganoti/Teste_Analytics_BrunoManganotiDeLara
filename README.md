@@ -8,7 +8,7 @@
     <li>🛠️ Tecnologias utilizadas</li>
     <li>🗃️ Estrutura do Repositório</li>
     <li>
-      ⚙️ Instruções
+      ⚙️ Configuração
       <ul>
         <li><a href="#1️⃣-clone-o-repositório">Clonando o repositório</a></li>
         <li><a href="#2️⃣-instale-as-dependências-do-projeto">Instalando as dependências</a></li>
@@ -78,8 +78,8 @@
 └── 📦 requisitos.txt # Dependências do projeto
    ```
 
-# ⚙️ Instruções
-Siga as etapas abaixo para o funcionamento correto dos scripts.
+# ⚙️ Configuração
+Siga as etapas de configuração abaixo para o funcionamento correto dos scripts.
 
 ## 1️⃣ Clone o repositório
    ```bash
@@ -109,12 +109,12 @@ py geracao_limpeza_dados.py
 ```
 Isso vai gerar o arquivo 📄 <mark>data_clean.csv</mark>.
 
-### 📜 Saída no terminal
+### 💻 Saída no terminal
 O script <mark>geracao_limpeza_dados.py</mark> também permite que você visualize os dados antes e após a limpeza pelo terminal.
 <br><br>
-Basta escolher o que deseja visualizar, <b>remover os comentários</b> dos trechos correspondentes e executar o passo anterior.
+Basta escolher o que deseja visualizar, <b>remover os comentários</b> dos trechos correspondentes e executar o script.
 
-### Visualizar: Dados gerados de forma bruta (raw data) | Linha <b>61</b>
+### Ⅰ. Visualizar: Dados gerados de forma bruta (raw data) | Linha <b>61</b>
 ```py
 """
 print('\n-----------------------------')
@@ -123,7 +123,7 @@ print(df_vendas.to_string(index=False))
 """
 ```
 
-### Visualizar: Dados após limpeza (duplicatas e nulos) | Linha <b>76</b>
+### Ⅱ. Visualizar: Dados após limpeza (duplicatas e nulos) | Linha <b>76</b>
 ```py
 """ 
 print('\n----------------------------------')
@@ -132,7 +132,7 @@ print(df_vendas.to_string(index=False))
 """
 ```
 
-### Visualizar: Dados após cálculo e adição de nova coluna 'total_vendas' | Linha <b>95</b>
+### Ⅲ. Visualizar: Dados após cálculo e adição de nova coluna 'total_vendas' | Linha <b>95</b>
 ```py
 """ 
 print('\n-------------------------------')
