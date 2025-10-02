@@ -5,10 +5,6 @@ import matplotlib.pyplot as plt
 df_vendas = pd.read_csv('data_clean.csv')
 df_vendas['Data'] = pd.to_datetime(df_vendas['Data'])
 
-print('\n-------------------------------')
-print('APÓS CÁLCULO DO TOTAL DE VENDAS\n')
-print(df_vendas.to_string(index=False)) 
-
 # === PRIMEIRA VISUALIZAÇÃO: GRÁFICO DE LINHA COM O TOTAL DE VENDAS POR MÊS === #
 # Agrupa a soma do total de vendas por mês
 vendas_mensais = df_vendas.resample('MS', on='Data')['total_vendas'].sum()

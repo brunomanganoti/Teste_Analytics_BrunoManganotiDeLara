@@ -1,8 +1,8 @@
 <a id="inicio-readme"></a>
 
-<!-- CONTEÚDO DO REPOSITÓRIO -->
+<!-- MENU DA DOCUMENTAÇÃO -->
 <details>
-  <summary><b>Conteúdo do Repositório</b></summary>
+  <summary><b>☰ Menu da Documentação</b></summary>
   <ol>
     <li>📊 Sobre o Projeto</li>
     <li>🛠️ Tecnologias utilizadas</li>
@@ -70,6 +70,8 @@
 ├── 📁 Parte 3 # Relatório de Insights
 │   │
 │   └── relatorio_insights.md
+│
+├── 🙈 .gitignore                   
 │
 ├── 📘 README.md                   
 │
