@@ -2,20 +2,20 @@
 
 <!-- CONTEÚDO DO REPOSITÓRIO -->
 <details>
-  <summary>Conteúdo do Repositório</summary>
+  <summary><b>Conteúdo do Repositório</b></summary>
   <ol>
-    <li><a href="#📊-projeto-|-teste-analytics">📊 Sobre o Projeto</a></li>
-    <li><a href="#🛠️-tecnologias-utilizadas">🛠️ Tecnologias utilizadas</a></li>
-    <li><a href="#🗃️-estrutura-do-repositório">🗃️ Estrutura do Repositório</a></li>
+    <li>📊 Sobre o Projeto</li>
+    <li>🛠️ Tecnologias utilizadas</li>
+    <li>🗃️ Estrutura do Repositório</li>
     <li>
-      <a href="#⚙️-instruções">⚙️ Instruções</a>
+      ⚙️ Instruções
       <ul>
         <li><a href="#1️⃣-clone-o-repositório">Clonando o repositório</a></li>
         <li><a href="#2️⃣-instale-as-dependências-do-projeto">Instalando as dependências</a></li>
       </ul>
     </li>
     <li>
-      <a href="#▶️-como-funciona">▶️ Como funciona</a>
+      ▶️ Como funciona
       <ul>
         <li><a href="#ℹ️-observações-iniciais">Observações</a></li>
         <li><a href="#1️⃣-geração-e-limpeza-dos-dados">Geração e limpeza dos dados</a></li>
@@ -26,13 +26,11 @@
     </li>
   </ol>
 </details>
-<br>
 
 <!-- SOBRE O PROJETO -->
 # 📊 Projeto | Teste Analytics
-* ### Este repositório contém um estudo fictício de geração, limpeza e análise de dados de vendas, com foco em simular cenários reais para prática de Data Analytics.
-* ### O projeto permite tanto utilizar o dataset original (data_clean.csv) quanto gerar novos dados aleatórios no mesmo arquivo para diferentes análises.
-<br>
+* Este repositório contém um estudo fictício de geração, limpeza e análise de dados de vendas, com foco em simular cenários reais para prática de Data Analytics.
+* O projeto permite tanto utilizar o dataset original (data_clean.csv) quanto gerar novos dados aleatórios no mesmo arquivo para diferentes análises.
 
 # 🛠️ Tecnologias utilizadas
    * Python 3.10+
@@ -40,7 +38,6 @@
    * Matplotlib -> visualização e geração de gráficos
    * Faker -> geração de dados fictícios
    * SQL -> consultas e análises
-<br><br>
 
 # 🗃️ Estrutura do repositório
    ```bash
@@ -78,7 +75,6 @@
 │
 └── 📦 requisitos.txt # Dependências do projeto
    ```
-<br>
 
 # ⚙️ Instruções
 Siga as etapas abaixo para o funcionamento correto dos scripts.
@@ -93,7 +89,6 @@ Siga as etapas abaixo para o funcionamento correto dos scripts.
    ```bash
    pip install -r requisitos.txt
    ```
-<br>
 
 # ▶️ Como funciona
 Etapas para geração das visualizações e novas análises.
