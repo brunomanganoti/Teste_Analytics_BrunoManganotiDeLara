@@ -29,9 +29,7 @@ Essa observação acaba reforçando a necessidade de uma boa preparação para e
 * Antecipar estratégias de final de ano para aproveitar e sustentar o crescimento até dezembro.
 * Analisar vendas e campanhas no período entre junho e agosto, para entender a causa do crescimento observado.
 
-<br>
 <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-<br>
 
 # 📊 Análise: Total de Vendas por Categoria | 2023
 
