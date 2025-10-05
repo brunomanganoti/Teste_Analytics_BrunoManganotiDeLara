@@ -1,5 +1,11 @@
 <a id="inicio-readme"></a>
 
+<p align="center">
+    <img src="img/analytics2.gif" height="150">
+</p>
+
+<h1 align="center">Projeto: Análise de Dados de Vendas</h1>
+
 <!-- MENU DA DOCUMENTAÇÃO -->
 <details>
   <summary><b>☰ Menu da Documentação</b></summary>
@@ -28,7 +34,7 @@
 </details>
 
 <!-- SOBRE O PROJETO -->
-# 📊 Projeto | Teste Analytics
+# 📊 Sobre o Projeto
 * Este repositório contém um estudo fictício de geração, limpeza e análise de dados de vendas, com foco em simular cenários reais para prática de Data Analytics.
 * O projeto permite tanto utilizar o dataset original (data_clean.csv) quanto gerar novos dados aleatórios no mesmo arquivo para diferentes análises.
 
