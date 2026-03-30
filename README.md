@@ -10,7 +10,7 @@
 <details>
   <summary><b>☰ Menu da Documentação</b></summary>
   <ol>
-    <li>📊 Sobre o Projeto</li>
+    <li>📊 Sobre o projeto</li>
     <li>🛠️ Tecnologias utilizadas</li>
     <li>🗃️ Estrutura do Repositório</li>
     <li>
