@@ -47,7 +47,7 @@
 
 # 🗃️ Estrutura do repositório
    ```bash
-📂 projeto_analytics
+📂 analise_vendas
 │
 ├── 📁 img # Imagens auxiliares
 │
@@ -89,9 +89,9 @@ Siga as etapas de configuração abaixo para o funcionamento correto dos scripts
 
 ## 1️⃣ Clone o repositório
    ```bash
-   git clone https://github.com/brunomanganoti/projeto_analytics.git
+   git clone https://github.com/brunomanganoti/analise_vendas.git
 
-   cd projeto_analytics
+   cd analise_vendas
    ```
 ## 2️⃣ Instale as dependências do projeto
    ```bash
