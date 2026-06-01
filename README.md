@@ -47,13 +47,11 @@
 
 # 🗃️ Estrutura do repositório
    ```bash
-📂 projeto_analytics
+projeto_analytics/
 │
-├── 📁 img # Imagens auxiliares
-│
-├── 📁 Parte 1 # Geração dos dados e limpeza
+├── Parte 1/ # Geração dos dados e limpeza
 │   │
-│   ├── 📁 Gráficos # Visualizações geradas
+│   ├── Gráficos/ # Visualizações geradas
 │   │   │
 │   │   ├── vendas_categoria.png
 │   │   │
@@ -67,21 +65,23 @@
 │   │
 │   └── map_produto_cat_preco.py
 │   
-├── 📁 Parte 2 # Consultas SQL
+├── Parte 2/ # Consultas SQL
 │   │
 │   ├── consultas_sql.sql
 │   │
 │   └── teste_consulta.py
 │
-├── 📁 Parte 3 # Relatório de Insights
+├── Parte 3/ # Relatório de Insights
 │   │
 │   └── relatorio_insights.md
 │
-├── 🙈 .gitignore                   
+├── img/ # Imagens auxiliares
 │
-├── 📘 README.md                   
+├── .gitignore                   
 │
-└── 📦 requisitos.txt # Dependências do projeto
+├── README.md                   
+│
+└── requisitos.txt # Dependências do projeto
    ```
 
 # ⚙️ Configuração
