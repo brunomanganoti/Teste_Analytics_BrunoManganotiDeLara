@@ -10,7 +10,7 @@
 <details>
   <summary><b>☰ Menu da Documentação</b></summary>
   <ol>
-    <li>📊 Sobre o Projeto</li>
+    <li>📊 Sobre o projeto</li>
     <li>🛠️ Tecnologias utilizadas</li>
     <li>🗃️ Estrutura do Repositório</li>
     <li>
@@ -47,7 +47,7 @@
 
 # 🗃️ Estrutura do repositório
    ```bash
-projeto_analytics/
+analise_vendas/
 │
 ├── Parte 1/ # Geração dos dados e limpeza
 │   │
@@ -89,9 +89,9 @@ Siga as etapas de configuração abaixo para o funcionamento correto dos scripts
 
 ## 1️⃣ Clone o repositório
    ```bash
-   git clone https://github.com/brunomanganoti/projeto_analytics.git
+   git clone https://github.com/brunomanganoti/analise_vendas.git
 
-   cd projeto_analytics
+   cd analise_vendas
    ```
 ## 2️⃣ Instale as dependências do projeto
    ```bash
